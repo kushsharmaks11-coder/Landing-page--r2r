@@ -1,0 +1,32 @@
+# ========================================================
+# R2R (Road to Recommendation) — robots.txt
+# Technical SEO & AI Crawlers Specification
+# ========================================================
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Explicitly allow major AI search & citation crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://r2rssb.com/sitemap.xml
+

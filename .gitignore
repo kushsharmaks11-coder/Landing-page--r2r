@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS & Temp
+.DS_Store
+Thumbs.db
+*.tmp
+scratch/
+intercept_photos.js
+
+# Temporary scrap scripts and dumps
+gsearch*.html
+gmaps*.html
+gimages*.html
+*dump*
+maps_*.png
+gimages_*.png
+captured_*.json
+all_maps_*.json
+scrape_*.js
+find_*.js
+check_*.js
+click_*.js
+dl_*.js
+get_*.js
+read_*.js
+test_*.js
+parse_*.js
