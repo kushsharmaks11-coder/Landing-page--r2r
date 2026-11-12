@@ -5006,6 +5006,201 @@ button {
     transform: translate(-50%, 0);
   }
 }
+/* --- 5-DAY SSB TESTING STAGE SWITCHER --- */
+.stage-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 32px 0 24px;
+}
+.stage-tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  background: #FFFFFF;
+  border: 1px solid rgba(19, 42, 29, 0.12);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  min-width: 145px;
+  text-align: center;
+}
+.stage-tab-btn:hover {
+  border-color: var(--primary-emerald);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.12);
+}
+.stage-tab-btn.active {
+  background: #0B291B;
+  border-color: #0B291B;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(11, 41, 27, 0.2);
+}
+.stage-tab-day {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #10B981;
+}
+.stage-tab-btn.active .stage-tab-day {
+  color: #34D399;
+}
+.stage-tab-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-top: 3px;
+}
+.stage-tab-btn.active .stage-tab-name {
+  color: #FFFFFF;
+}
+.stage-detail-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(19, 42, 29, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  box-shadow: 0 8px 30px rgba(19, 42, 29, 0.05);
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.stage-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px dashed rgba(19, 42, 29, 0.12);
+}
+.stage-badge-pill {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.stage-full-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+.stage-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 860px) {
+  .stage-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .stage-tab-btn {
+    min-width: 110px;
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 640px) {
+  .stage-tabs-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 16px 12px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 20px -16px 18px;
+  }
+  .stage-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .stage-tab-btn {
+    flex: 0 0 auto;
+    min-width: 125px;
+    padding: 10px 14px;
+  }
+  .backdrop-branch-tag {
+    display: none !important;
+  }
+  .stage-detail-card {
+    padding: 22px 18px;
+  }
+}
+.stage-col-box {
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  border: 1px solid rgba(19, 42, 29, 0.08);
+}
+.stage-col-box.objective {
+  background: #F8FAFC;
+  border-left: 3.5px solid #3B82F6;
+}
+.stage-col-box.mistake {
+  background: #FFF7ED;
+  border-left: 3.5px solid #F97316;
+}
+.stage-col-box.solution {
+  background: #F0FDF4;
+  border-left: 3.5px solid #10B981;
+}
+.stage-col-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.stage-col-box.objective .stage-col-label { color: #1D4ED8; }
+.stage-col-box.mistake .stage-col-label { color: #C2410C; }
+.stage-col-box.solution .stage-col-label { color: #047857; }
+.stage-col-title {
+  font-size: 15px;
+  font-weight: 750;
+  color: #0F172A;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.stage-col-desc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+.mentor-credentials-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mentor-credentials-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.45;
+}
+.mentor-credentials-bullets li svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--primary-emerald);
+  margin-top: 2px;
+}
 </style>
 </head>
 <body>
@@ -5102,15 +5297,15 @@ button {
       <div class="hero-grid">
         <!-- Left Column: Primary Copy & Trust Metrics -->
         <div class="hero-left">
-          <div class="section-coord-tag">✦ Delhi Patel Nagar Studio & Online Live</div>
+          <div class="section-coord-tag">✦ Delhi Patel Nagar Studio & Online Live · Strictly 15 Candidates</div>
 
           <h1 class="hero-headline">
-            Not <span class="text-emerald highlight-recommended">Recommended</span> Again? <br>
-            <span class="text-emerald">Diagnose the Real Gap</span> Before Your Next SSB.
+            You Can’t Project <br class="hero-br">
+            <span class="text-emerald">What You Haven’t Discovered.</span>
           </h1>
 
           <p class="hero-lead">
-            Elite SSB interview preparation & mentorship studio providing line-by-line psychological dossier deconstruction and individualized interview profiling. Co-founded and guided exclusively by mentors who cleared multiple times themselves. Strictly 15 candidates per batch.
+            Every academy says <em>“Just Be Yourself”</em>. But how can you project who you are when you’ve never deconstructed your own subconscious narrative? At R2R, we replace memorized coaching scripts with authentic 1-on-1 psychological dossier evaluation.
           </p>
 
           <div class="hero-actions">
@@ -5173,19 +5368,19 @@ button {
             
             
 
-            <!-- Top Switcher: Story Mode (Active) vs Interview Simulator -->
+            <!-- Top Switcher: Interview Simulator (Active) vs Story Reel -->
             <div class="deck-mode-tabs">
-              <button class="deck-tab active" id="tabStory" onclick="switchDeckMode('story')">
-                <span>🎬 Aspirant's Story Reel</span>
-                <span class="tab-live-tag">● AUTO-PLAY</span>
-              </button>
-              <button class="deck-tab" id="tabSim" onclick="switchDeckMode('sim')">
+              <button class="deck-tab active" id="tabSim" onclick="switchDeckMode('sim')">
                 <span>🎙️ Interview Simulator</span>
+                <span class="tab-live-tag">● LIVE INTERACTIVE</span>
+              </button>
+              <button class="deck-tab" id="tabStory" onclick="switchDeckMode('story')">
+                <span>🎬 Aspirant's Story Reel</span>
               </button>
             </div>
 
-            <!-- VIEW A: THE CINEMATIC STORY REEL (Active on load) -->
-            <div class="story-reel-view" id="storyReelView">
+            <!-- VIEW A: THE CINEMATIC STORY REEL -->
+            <div class="story-reel-view" id="storyReelView" style="display:none;">
               <!-- 4 Segmented Progress Bars (Instagram / Apple Style) -->
               <div class="story-progress-bar-row">
                 <div class="story-seg active" id="storySeg0" onclick="jumpToStoryScene(0)">
@@ -5245,8 +5440,8 @@ button {
               </div>
             </div>
 
-            <!-- VIEW B: THE INTERVIEW SIMULATOR (Accessible via tab) -->
-            <div class="interview-sim-view" id="interviewSimView" style="display:none;">
+            <!-- VIEW B: THE INTERVIEW SIMULATOR (Active on load) -->
+            <div class="interview-sim-view" id="interviewSimView" style="display:block;">
               <div class="console-topbar" style="margin-top:4px;">
                 <div class="assessor-avatar-group">
                   <div class="assessor-badge">IO</div>
@@ -5386,7 +5581,7 @@ button {
         <div class="section-coord-tag">✦ Candidate Diagnostics</div>
         <h2 class="section-title">Where Did Your Last Attempt <span class="text-highlight-crimson">Actually Break Down?</span></h2>
         <p class="section-sub">
-          Tap the stage that describes your last attempt. Diagnose why candidate responses break down across the Thematic Apperception Test (TAT), Word Association (WAT), Situation Reaction (SRT), and PIQ personal interview.
+          Tap below to diagnose the exact psychological and interview bottlenecks that cause repeat screen-outs and conference-outs.
         </p>
       </div>
 
@@ -5441,7 +5636,7 @@ button {
         <div class="section-coord-tag">✦ Studio vs Coaching Factory</div>
         <h2 class="section-title">Why Commercial Coaching <br><span class="text-highlight-amber">Fails at the Selection Board</span></h2>
         <p class="section-sub">
-          With national SSB recommendation rates below 3.6% across Selection Boards (Allahabad, Bhopal, Bangalore, Dehradun, Kapurthala), assessors detect coached responses in under 30 seconds. Here is why high-volume factories fail, and why our 15-candidate studio delivers consistent recommendations.
+          SSB psychologists detect memorized templates within 30 seconds. Here is why mass batches fail, and how our 15-seat studio protects your recommendation.
         </p>
       </div>
 
@@ -5457,22 +5652,22 @@ button {
             <li class="contrast-bullet">
               <span class="contrast-bullet-icon">✕</span>
               <div class="contrast-bullet-txt">
-                <b>Rigid, memorized psychological templates</b>
-                <span>Forces 150 students into identical TAT/WAT answers that board psychologists instantly flag as coached.</span>
+                <b>Rigid, memorized psychological scripts</b>
+                <span>150 students forced into identical answers that board psychologists instantly flag as coached.</span>
               </div>
             </li>
             <li class="contrast-bullet">
               <span class="contrast-bullet-icon">✕</span>
               <div class="contrast-bullet-txt">
                 <b>Lecture-hall theory, zero personal review</b>
-                <span>You sit in rows listening to slides. Your individual life experiences and PIQ are never cross-examined.</span>
+                <span>You sit in rows listening to slides. Your individual PIQ and life experiences are never evaluated.</span>
               </div>
             </li>
             <li class="contrast-bullet">
               <span class="contrast-bullet-icon">✕</span>
               <div class="contrast-bullet-txt">
-                <b>Superficial "Officers" hype over diagnosis</b>
-                <span>Motivational speeches replace tough, honest evaluation. You leave confident, yet make the same subconscious errors.</span>
+                <b>Superficial hype over deep diagnosis</b>
+                <span>Motivational speeches replace tough feedback. You leave confident, yet repeat the same subconscious errors.</span>
               </div>
             </li>
           </ul>
@@ -5490,13 +5685,13 @@ button {
               <span class="contrast-bullet-icon">✓</span>
               <div class="contrast-bullet-txt">
                 <b>1-on-1 dossier forensic deconstruction</b>
-                <span>Mentors deconstruct all 12 TAT stories, 60 WAT words, and your PIQ form line-by-line with you.</span>
+                <span>Mentors deconstruct all 12 TAT stories, 60 WAT words, 60 SRTs, and your PIQ form line-by-line with you.</span>
               </div>
             </li>
             <li class="contrast-bullet">
               <span class="contrast-bullet-icon">✓</span>
               <div class="contrast-bullet-txt">
-                <b>Blank-paper introspection from your life</b>
+                <b>Authentic introspection from your real life</b>
                 <span>You build responses derived from your authentic experiences, so your answers stay consistent under extreme pressure.</span>
               </div>
             </li>
@@ -5504,11 +5699,55 @@ button {
               <span class="contrast-bullet-icon">✓</span>
               <div class="contrast-bullet-txt">
                 <b>Unvarnished, objective feedback</b>
-                <span>No false compliments. You leave with crystal clarity on exactly what to alter before your reporting date.</span>
+                <span>Zero false compliments. You leave with crystal clarity on exactly what to alter before your reporting date.</span>
               </div>
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION: THE 5-DAY SSB TESTING ARCHITECTURE (INTERACTIVE STAGE SWITCHER)
+       ======================================================== -->
+  <section class="section-wrap" id="stages" style="position:relative; overflow:hidden;">
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="text-center">
+        <div class="section-coord-tag">✦ The 5-Day SSB Architecture</div>
+        <h2 class="section-title">The 5-Day Testing Battery.<br><span class="text-highlight-emerald">How We Deconstruct Each Stage.</span></h2>
+        <p class="section-sub">
+          Tap any testing stage below to see what the board evaluates, the common factory mistake, and our 1-on-1 studio deconstruction approach.
+        </p>
+      </div>
+
+      <!-- Stage Selector Tabs -->
+      <div class="stage-tabs-nav" id="stageTabsNav">
+        <button class="stage-tab-btn active" data-stage="day1" onclick="switchSsbStage('day1')">
+          <span class="stage-tab-day">DAY 1</span>
+          <span class="stage-tab-name">Screening & PPDT</span>
+        </button>
+        <button class="stage-tab-btn" data-stage="day2" onclick="switchSsbStage('day2')">
+          <span class="stage-tab-day">DAY 2</span>
+          <span class="stage-tab-name">Psychology Battery</span>
+        </button>
+        <button class="stage-tab-btn" data-stage="day34" onclick="switchSsbStage('day34')">
+          <span class="stage-tab-day">DAYS 3–4</span>
+          <span class="stage-tab-name">GTO & Outdoor</span>
+        </button>
+        <button class="stage-tab-btn" data-stage="interview" onclick="switchSsbStage('interview')">
+          <span class="stage-tab-day">INTERVIEW</span>
+          <span class="stage-tab-name">IO & PIQ Review</span>
+        </button>
+        <button class="stage-tab-btn" data-stage="conference" onclick="switchSsbStage('conference')">
+          <span class="stage-tab-day">DAY 5</span>
+          <span class="stage-tab-name">Board Conference</span>
+        </button>
+      </div>
+
+      <!-- Stage Content Display Box -->
+      <div class="stage-detail-card" id="stageDetailCard">
+        <!-- Rendered dynamically by JS -->
       </div>
     </div>
   </section>
@@ -6480,6 +6719,11 @@ const MENTORS = {
     photo: "images/mentors/shashank.jpg",
     cdnPhoto: "https://d502jbuhuh9wk.cloudfront.net/orgData/672b589289142679bcbd3ff8/pages/assets/images/wTQ7grksteshashybhaismiling.jpg",
     teaches: ["Psychology (TAT / WAT / SRT / SD)", "Personal Interview (IO Forensic PIQ)", "Screening (PPDT & OIR)"],
+    highlights: [
+      "AIR-19 in CDS-1 2018 · Recommended twice for Indian Army",
+      "Personally deconstructs all 12 TAT stories, 60 WATs & 60 SRTs line-by-line",
+      "Mentored 580+ recommendations with zero rote scripts since 2019"
+    ],
     quote: "We built R2R to bridge the gap between coaching institute promises and actual selection board reality.",
     bio: "Recommended twice for Indian Army through CDS entry (AIR-19 in CDS-1 2018). Qualified NDA and AFCAT exams.<br><br>In the teaching and mentorship industry since 2019 across leading institutes as faculty for SSB, defense exams, and freelance evaluator for UPSC Civil Services. After experiencing the flawed learning outcomes of mass coaching institutes firsthand, I founded R2R to provide deep psychological deconstruction, authentic self-projection, and an individualized roadmap that reduces the distance to recommendation by a significant margin.",
     color: "#0B1F13"
@@ -6494,6 +6738,11 @@ const MENTORS = {
     photo: "images/mentors/neha.png",
     cdnPhoto: "https://d502jbuhuh9wk.cloudfront.net/orgData/672b589289142679bcbd3ff8/pages/assets/images/3NnSUxexq5file.png",
     teaches: ["Subconscious Narrative Analysis", "Authentic Self-Projection (SD)", "PPDT & OIR Mastery"],
+    highlights: [
+      "Thrice Recommended candidate · DRDO & Air Force family pedigree",
+      "Masters in Health Administration (TISS Mumbai)",
+      "Specialist in Subconscious Narrative Analysis & Authentic Self-Projection"
+    ],
     quote: "The SSB isn't about perfection; it's about authentic projection — showing who you truly are.",
     bio: "Thrice Recommended candidate with a Masters in Health Administration from TISS Mumbai.<br><br>Coming from an Air Force and DRDO defence family, the uniform was a deeply personal dream. My journey taught me that SSB psychologists detect memorized templates within thirty seconds. At R2R, I guide candidates to analyze their subconscious writing patterns, bring authentic structure to their life stories, and project their genuine strengths with total poise.",
     color: "#1E3A8A"
@@ -6508,6 +6757,11 @@ const MENTORS = {
     photo: "images/mentors/rahul.jpg",
     cdnPhoto: "https://d502jbuhuh9wk.cloudfront.net/orgData/672b589289142679bcbd3ff8/pages/assets/images/GVsx6whatsappimage20251101at2.31.17pm.jpg",
     teaches: ["PIQ Forensic Cross-Examination", "Rapid-Fire Stress Interview", "Armed Forces Tribunal & Law"],
+    highlights: [
+      "SSB Recommended JAG-35, AIR 9 · Military family pedigree",
+      "Practicing Advocate specializing in Armed Forces Tribunal litigation",
+      "Forensic PIQ deconstruction & boardroom stress interview simulations"
+    ],
     quote: "The SSB is not about creating a perfect persona; it's about authentic projection through deep self-introspection.",
     bio: "SSB Recommended JAG-35, AIR 9 and practicing advocate specializing in Armed Forces Tribunal litigation.<br><br>Carrying forward a military family legacy, I focus on forensic PIQ deconstruction. In our one-on-one sessions, we conduct boardroom-level stress interview simulations and eliminate narrative contradictions, ensuring you can defend every life choice, hobby, and decision before the Interviewing Officer with conviction.",
     color: "#991B1B"
@@ -6588,109 +6842,201 @@ const STORIES = [
   }
 ];
 
-/* --- DATA: 10 PROBLEMS --- */
+/* --- DATA: 4 MASTER DIAGNOSTICS --- */
 const PROBLEMS = [
   {
-    id: "tat-repeat",
-    stage: "Psychology",
-    shortName: "Repetitive TAT stories",
-    question: "My TAT (Thematic Apperception Test) stories keep repeating the same plots",
-    why: "Under the 4-minute time pressure, your mind panics and falls back on memorized coaching tropes. Board psychologists see right through it.",
-    how: "We analyze your actual written stories line-by-line: evaluating the hero's realistic actions, emotional depth, and sensible resolutions.",
+    id: "ppdt-screening",
+    stage: "Screening (Day 1)",
+    shortName: "Screened out in PPDT",
+    question: "Repeatedly screened out in PPDT Narration & Group Discussion?",
+    why: "In a chaotic fish-market of 18 candidates, shouting louder or reciting rigid coaching templates triggers immediate elimination.",
+    how: "We calibrate your 60-second narration pacing, perceptual grounding, and train subtle group entry cues to command authority without aggressive shouting.",
+    mentors: ["shashank", "neha"],
+    storyId: "yash"
+  },
+  {
+    id: "tat-psychology",
+    stage: "Psychology (Day 2)",
+    shortName: "Coached / Repetitive TAT",
+    question: "TAT & WAT responses feel artificial, coached, or repetitive?",
+    why: "Under 4-minute time pressure, panic forces you into memorized tropes. Board psychologists detect the fake persona in under 30 seconds.",
+    how: "Line-by-line red-pen deconstruction of all your 12 TAT stories and 60 WAT words to derive actions directly from your real life narrative.",
     mentors: ["neha", "shashank"],
     storyId: "abhishek"
   },
   {
-    id: "tat-blank",
-    stage: "Psychology",
-    shortName: "Blanking out in TAT",
-    question: "I go completely blank in TAT. Zero ideas come.",
-    why: "You freeze because you are hunting for an artificial 'heroic military story' instead of perceiving what is actually happening in the picture.",
-    how: "We train you to connect visual cues directly to events you have witnessed or lived, giving you an immediate grounded foundation.",
-    mentors: ["neha", "shashank"],
-    storyId: "komal"
-  },
-  {
-    id: "wat-forced",
-    stage: "Psychology",
-    shortName: "Forced WAT sentences",
-    question: "My WAT (Word Association Test) responses feel forced and moralistic",
-    why: "15 seconds is impossible to fake. Writing pre-memorized moral preachings ('A leader always shows courage') reveals insecurity.",
-    how: "We train your subconscious association so your instantaneous reactions reflect your natural lifestyle and habits.",
-    mentors: ["shashank", "neha"],
-    storyId: "karan"
-  },
-  {
-    id: "sd-clash",
-    stage: "Psychology",
-    shortName: "Conflicting Self Description",
-    question: "I don't know how to write an authentic Self Description (SD)",
-    why: "Most candidates write what they think the board wants to read, creating glaring psychological contradictions with their TAT and PIQ.",
-    how: "You draft your genuine SD, and we refine it until it reflects your authentic strengths, acknowledged shortcomings, and developmental goals.",
-    mentors: ["neha", "shashank"],
-    storyId: "nitu"
-  },
-  {
-    id: "overthinking",
-    stage: "Psychology",
-    shortName: "Overthinking & running out of time",
-    question: "I overthink every single response and run out of time",
-    why: "Previous setbacks breed fear. You second-guess whether each word sounds 'officer-like' and lose your natural pace.",
-    how: "We strip away perfection anxiety with timed pressure exercises, training you to trust your first sensible instinct.",
-    mentors: ["neha"],
-    storyId: "nitu"
-  },
-  {
-    id: "interview-gap",
-    stage: "Interview",
-    shortName: "Explaining gap years & low marks",
-    question: "Low percentage or a gap year: What do I tell the Interviewing Officer (IO)?",
-    why: "Candidates become defensive, give fabricated medical excuses, or blame college professors. The IO notes the lack of ownership instantly.",
-    how: "Rahul Sir and Shashank Sir help you examine the real reasons behind your choices and practice articulating them with maturity.",
+    id: "interview-piq",
+    stage: "Personal Interview",
+    shortName: "Freezing in Rapid-Fire PIQ",
+    question: "Defensive or nervous when the IO grills your marks, gap years, or life choices?",
+    why: "Reciting 'ideal' coaching answers instead of owning your real decisions creates hesitation and narrative contradictions.",
+    how: "Boardroom cross-examination with practicing advocate Rahul Sharma (JAG-35 AIR 9), defending every single PIQ entry with total conviction.",
     mentors: ["rahul", "shashank"],
     storyId: "ankit"
   },
   {
-    id: "interview-freeze",
-    stage: "Interview",
-    shortName: "Freezing under rapid questioning",
-    question: "I freeze when the IO fires rapid-fire questions",
-    why: "You try to calculate the 'approved answer' rather than listening attentively to the sequence of questions asked.",
-    how: "Intensive mock interviews focusing on stress management, logical sequencing, and tying your genuine experiences to the PIQ.",
-    mentors: ["shashank", "rahul"],
-    storyId: "yash"
-  },
-  {
-    id: "gto-quiet",
-    stage: "GTO",
-    shortName: "Staying quiet in GD & group tasks",
-    question: "I go quiet during Group Discussions (GD) and Progressive Group Tasks (PGT)",
-    why: "You either wait indefinitely for a polite silence that never comes, or try to out-shout aggressive candidates, breaking team cohesion.",
-    how: "Rahul Sharma and Shashank Rai train you on non-verbal entry cues, bridging group divides, and introducing constructive ideas without shouting.",
-    mentors: ["shashank", "rahul"],
-    storyId: "manish"
-  },
-  {
-    id: "screening-out",
-    stage: "Screening",
-    shortName: "Repeated Stage-1 Screen Outs",
-    question: "I keep getting screened out on Day 1 (OIR & PPDT)",
-    why: "High OIR marks mean nothing if your PPDT narration lacks composure or you become belligerent in the group discussion.",
-    how: "We isolate your exact screening bottleneck—narration cadence, body posture, or discussion consensus—and fix it methodically.",
-    mentors: ["shashank", "rahul"],
-    storyId: "yash"
-  },
-  {
-    id: "conference-out",
-    stage: "Conference",
-    shortName: "Conferenced out with zero feedback",
-    question: "Conferenced out on Day 5 and nobody told me why",
-    why: "Reaching Day 5 proves you possess potential, but borderline hesitation across assessors left you just short of consensus.",
-    how: "We conduct an in-depth retrospective across Selection Boards (Allahabad, Bhopal, Bangalore, Dehradun, Varanasi) across Psych, Interview, and GTO to expose your borderline blindspots.",
-    mentors: ["shashank", "neha", "rahul"],
+    id: "sd-congruence",
+    stage: "Psychology & Congruence",
+    shortName: "Contradictory Self Description",
+    question: "Self Description (SD) contradicts your TAT stories & Interview PIQ?",
+    why: "Writing what you think assessors want to hear creates glaring subconscious dissonance across your 3 assessment dossiers.",
+    how: "Neha Ma'am refines your authentic psychological profile so your thoughts, words, and actions project 100% unified congruence.",
+    mentors: ["neha", "shashank"],
     storyId: "nitu"
   }
 ];
+
+/* --- DATA: 5-DAY SSB TESTING ARCHITECTURE --- */
+const SSB_STAGES = {
+  day1: {
+    badge: "DAY 1 · STAGE 1 TESTING",
+    title: "Screening: Intelligence Rating (OIR) & Picture Perception (PPDT)",
+    objective: {
+      label: "What The Board Evaluates",
+      title: "Perceptual Clarity & Group Poise",
+      desc: "Instant subconscious perception of picture mood, age, characters, and a 60-second narration under peer pressure to determine Stage 2 eligibility."
+    },
+    mistake: {
+      label: "The Mass Factory Mistake",
+      title: "Shouting & Fabricated Plots",
+      desc: "Forcing pre-coached military action scripts onto peaceful pictures, and turning the group discussion into an aggressive shouting match."
+    },
+    solution: {
+      label: "The R2R Studio Approach",
+      title: "1-on-1 Narration & Modulation",
+      desc: "We calibrate your 60-second narration delivery, unvarnished perceptual grounding, and train subtle group entry cues to lead without shouting."
+    }
+  },
+  day2: {
+    badge: "DAY 2 · STAGE 2 TESTING",
+    title: "Psychological Battery: TAT (12 Stories) · WAT (60 Words) · SRT (60 Situations) · SD",
+    objective: {
+      label: "What The Board Evaluates",
+      title: "Subconscious Personality Footprint",
+      desc: "High-pressure projective testing measuring whether your genuine instincts, natural resourcefulness, and core values match officer qualities."
+    },
+    mistake: {
+      label: "The Mass Factory Mistake",
+      title: "Coached Tropes & Moralizing",
+      desc: "Reciting memorized TAT stories and preachings in WAT. SSB psychologists detect coached or copied templates within 30 seconds."
+    },
+    solution: {
+      label: "The R2R Studio Approach",
+      title: "Line-by-Line Dossier Deconstruction",
+      desc: "Shashank Rai & Neha Ma'am deconstruct all 12 TATs and 60 WATs with red pen, eliminating contradictions and drawing from your real life."
+    }
+  },
+  day34: {
+    badge: "DAYS 3 & 4 · STAGE 2 TESTING",
+    title: "GTO Outdoor Tasks: PGT · HGT · FGT · Command Task · Snake Race · Group Discussions",
+    objective: {
+      label: "What The Board Evaluates",
+      title: "Group Dynamics & Practical Intelligence",
+      desc: "Real-time leadership emergence, structural mechanics (cantilever, fulcrum), teamwork, and emotional stability under physical friction."
+    },
+    mistake: {
+      label: "The Mass Factory Mistake",
+      title: "Physically Grabbing Props",
+      desc: "Fighting to physically hold the plank/rope without offering viable structural bridging solutions, or dominating quiet group members."
+    },
+    solution: {
+      label: "The R2R Studio Approach",
+      title: "Physics of Obstacles & Group Emergence",
+      desc: "Hands-on structural mechanics training in Delhi studio and tactical leadership exercises to emerge naturally as the team's anchor."
+    }
+  },
+  interview: {
+    badge: "STAGE 2 · 45–60 MIN INTERROGATION",
+    title: "Personal Interview: Forensic PIQ Cross-Examination & Rapid-Fire Interrogation",
+    objective: {
+      label: "What The Board Evaluates",
+      title: "Life Integrity & Decision Defense",
+      desc: "Comprehensive cross-examination by the Interviewing Officer (IO) into family, academics, career choices, hobbies, and general awareness."
+    },
+    mistake: {
+      label: "The Mass Factory Mistake",
+      title: "Defensiveness & Scripted Excuses",
+      desc: "Reciting coaching reasons for 'Why Defence?', making excuses for low percentages, or fabricating hobbies that collapse under cross-exam."
+    },
+    solution: {
+      label: "The R2R Studio Approach",
+      title: "Boardroom Forensic Interrogation",
+      desc: "Simulations with practicing advocate Rahul Sharma (JAG-35 AIR 9), forensically testing every single PIQ entry until your narrative is bulletproof."
+    }
+  },
+  conference: {
+    badge: "DAY 5 · FINAL STAGE",
+    title: "Board Conference: Tri-Services Assessment Reconciliation & Final Merit",
+    objective: {
+      label: "What The Board Evaluates",
+      title: "Assessor Consensus & Congruence",
+      desc: "All three assessors (Psychologist, GTO, IO) reconcile their independent dossiers to confirm you meet the Minimum Acceptable Standard."
+    },
+    mistake: {
+      label: "The Mass Factory Mistake",
+      title: "Incongruent Dossiers",
+      desc: "Performing like a leader in GTO while showing insecurity in psychology. Contradictions across assessors result in conference-out."
+    },
+    solution: {
+      label: "The R2R Studio Approach",
+      title: "Total Dossier Congruence",
+      desc: "We ensure your written psychology, spoken interview, and group actions tell one single, authentic, unified story with zero friction."
+    }
+  }
+};
+
+let activeStageKey = "day1";
+
+function switchSsbStage(key) {
+  activeStageKey = key;
+  document.querySelectorAll(".stage-tab-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.stage === key);
+  });
+  renderStageDetail();
+}
+window.switchSsbStage = switchSsbStage;
+
+function renderStageDetail() {
+  const container = document.getElementById("stageDetailCard");
+  if (!container) return;
+  const s = SSB_STAGES[activeStageKey];
+  if (!s) return;
+
+  container.innerHTML = `
+    <div class="stage-header-meta">
+      <span class="stage-badge-pill">${s.badge}</span>
+      <h3 class="stage-full-title">${s.title}</h3>
+    </div>
+    <div class="stage-detail-grid">
+      <div class="stage-col-box objective">
+        <div class="stage-col-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          ${s.objective.label}
+        </div>
+        <div class="stage-col-title">${s.objective.title}</div>
+        <p class="stage-col-desc">${s.objective.desc}</p>
+      </div>
+
+      <div class="stage-col-box mistake">
+        <div class="stage-col-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          ${s.mistake.label}
+        </div>
+        <div class="stage-col-title">${s.mistake.title}</div>
+        <p class="stage-col-desc">${s.mistake.desc}</p>
+      </div>
+
+      <div class="stage-col-box solution">
+        <div class="stage-col-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          ${s.solution.label}
+        </div>
+        <div class="stage-col-title">${s.solution.title}</div>
+        <p class="stage-col-desc">${s.solution.desc}</p>
+      </div>
+    </div>
+  `;
+}
 
 /* --- RENDER MENTORS --- */
 const mentorsContainer = document.getElementById("mentorsContainer");
@@ -6720,6 +7066,15 @@ mentorsContainer.innerHTML = Object.entries(MENTORS).map(([id, m]) => `
       <span class="quote-symbol">“</span>
       <p class="quote-text">${m.quote}</p>
     </div>
+
+    <ul class="mentor-credentials-bullets">
+      ${(m.highlights || []).map(h => `
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>${h}</span>
+        </li>
+      `).join("")}
+    </ul>
 
     <div class="mentor-tags-row">
       ${m.teaches.map(t => `<span class="mentor-subject-tag">${t}</span>`).join("")}
@@ -6863,6 +7218,7 @@ function renderProblems() {
 }
 
 renderProblems();
+renderStageDetail();
 
 // Accordion toggle & dynamic state update
 problemsStack.addEventListener("click", e => {
@@ -7169,7 +7525,7 @@ const STORY_SCENES = [
 
 let currentStoryIdx = 0;
 let storyProgress = 0;
-let isStoryPlaying = true;
+let isStoryPlaying = false;
 let storyAnimFrame = null;
 let lastTimestamp = 0;
 const SCENE_DURATION = 5800; // 5.8s per scene
