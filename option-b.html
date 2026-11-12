@@ -161,22 +161,6 @@
             "@type": "Answer",
             "text": "Choose Offline if you want in-person immersion; choose Online if you need schedule flexibility. Our Delhi Offline Studio (Patel Nagar) runs 9:00 AM to 5:00 PM for 15 days, strictly capped at 15 candidates for physical group dynamics and boardroom interviews. Our Online Studio offers live interactive cohorts, 1-on-1 dossier reviews, modular subject batches, and session recordings for college students and working professionals."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens after I send 'Hi' on WhatsApp?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Within 4–6 hours, an admissions mentor reviews your attempt history and schedules your 15-minute diagnostic call. During this private call, our team analyzes your previous board performance, identifies your primary preparation gaps across Psych, Interview, and GTO, and recommends the right 15-day cohort. No automated spam or sales pressure."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is accommodation available for outstation students traveling to Delhi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Safe, verified budget student PGs are readily available within walking distance of our Patel Nagar studio. While R2R does not operate an in-house hostel, numerous verified paying guest (PG) accommodations with meal facilities are situated 2–5 minutes from the studio and Patel Nagar Metro Station. Outstation candidates from across India stay here comfortably during the 15-day offline studio."
-          }
         }
       ]
     }
@@ -4053,11 +4037,11 @@ button {
 }
 
 /* ========================================================
-   SECTION 8: UNFILTERED FAQ (CLEAN & FLOATING CARDS)
+   SECTION 8: UNFILTERED FAQ (CLEAN 2-COL COMPACT GRID)
    ======================================================== */
 .faq-terminal-frame {
-  max-width: 820px;
-  margin: 32px auto 0;
+  max-width: 980px;
+  margin: 28px auto 0;
   position: relative;
   z-index: 2;
 }
@@ -4067,46 +4051,54 @@ button {
 }
 
 .faq-accordion-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 14px;
+  align-items: start;
   background: transparent;
   border: none;
   padding: 0;
   box-shadow: none;
 }
 
+@media (max-width: 768px) {
+  .faq-accordion-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
 .faq-card {
   background: #FFFFFF;
-  border: 1px solid rgba(19, 42, 29, 0.07);
+  border: 1px solid rgba(19, 42, 29, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(19, 42, 29, 0.03), 0 1px 2px rgba(19, 42, 29, 0.02);
+  box-shadow: 0 3px 12px rgba(19, 42, 29, 0.03), 0 1px 2px rgba(19, 42, 29, 0.02);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .faq-card:hover {
   border-color: rgba(16, 185, 129, 0.35);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(19, 42, 29, 0.06), 0 4px 10px rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(19, 42, 29, 0.05), 0 2px 6px rgba(16, 185, 129, 0.06);
 }
 
 .faq-card[open] {
   border-color: rgba(16, 185, 129, 0.45);
-  box-shadow: 0 14px 36px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.10);
   background: #FFFFFF;
 }
 
 .faq-question-btn {
   list-style: none;
   cursor: pointer;
-  padding: 20px 22px;
-  font-size: 15.5px;
+  padding: 13px 16px;
+  font-size: 14.5px;
   font-weight: 750;
   color: var(--primary-deep);
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   user-select: none;
 }
 
@@ -4117,14 +4109,14 @@ button {
 .faq-question-btn::after {
   content: "+";
   font-family: var(--font-main);
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #F3F5F2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #059669;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, color 0.25s ease;
@@ -4141,13 +4133,13 @@ button {
 
 .faq-idx {
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   color: #059669;
   background: #ECFDF5;
   border: 1px solid #A7F3D0;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -4157,17 +4149,17 @@ button {
 
 .faq-q-text {
   flex: 1;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .faq-answer-txt {
-  padding: 0 24px 22px 68px;
-  font-size: 14.5px;
+  padding: 0 16px 14px 16px;
+  font-size: 13.5px;
   color: var(--text-muted);
-  line-height: 1.68;
+  line-height: 1.62;
   border-top: 1px solid rgba(19, 42, 29, 0.05);
   margin-top: 2px;
-  padding-top: 16px;
+  padding-top: 12px;
 }
 
 /* ========================================================
@@ -4657,9 +4649,13 @@ button {
     padding: 22px 18px;
   }
   .faq-question-btn {
-    padding: 16px 16px;
-    gap: 12px;
-    font-size: 14.5px;
+    padding: 12px 14px;
+    gap: 10px;
+    font-size: 13.5px;
+  }
+  .faq-answer-txt {
+    padding: 0 14px 12px 14px;
+    font-size: 13px;
   }
 }
 
@@ -6327,26 +6323,6 @@ button {
             </summary>
             <div class="faq-answer-txt">
               <strong>Choose Offline if you want in-person immersion; choose Online if you need schedule flexibility.</strong> Our Delhi Offline Studio (Patel Nagar) runs 9:00 AM to 5:00 PM for 15 days, strictly capped at 15 candidates for physical group dynamics and boardroom interviews. Our Online Studio offers live interactive cohorts, 1-on-1 dossier reviews, modular subject batches, and session recordings for college students and working professionals.
-            </div>
-          </details>
-
-          <details class="faq-card">
-            <summary class="faq-question-btn">
-              <span class="faq-idx">05</span>
-              <span class="faq-q-text">What happens after I send "Hi" on WhatsApp?</span>
-            </summary>
-            <div class="faq-answer-txt">
-              <strong>Within 4–6 hours, an admissions mentor reviews your attempt history and schedules your 15-minute diagnostic call.</strong> During this private call, our team analyzes your previous board performance, identifies your primary preparation gaps across Psych, Interview, and GTO, and recommends the right 15-day cohort. No automated spam or sales pressure.
-            </div>
-          </details>
-
-          <details class="faq-card">
-            <summary class="faq-question-btn">
-              <span class="faq-idx">06</span>
-              <span class="faq-q-text">Is accommodation available for outstation students traveling to Delhi?</span>
-            </summary>
-            <div class="faq-answer-txt">
-              <strong>Safe, verified budget student PGs are readily available within walking distance of our Patel Nagar studio.</strong> While R2R does not operate an in-house hostel, numerous verified paying guest (PG) accommodations with meal facilities are situated 2–5 minutes from the studio and Patel Nagar Metro Station. Outstation candidates from across India stay here comfortably during the 15-day offline studio.
             </div>
           </details>
         </div>
