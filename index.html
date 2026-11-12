@@ -2701,11 +2701,6 @@ button {
   border-top-color: #059669;
 }
 
-.mentor-tile.active-focus {
-  border-color: var(--gold);
-  border-top-color: var(--gold);
-  box-shadow: 0 0 0 2px var(--gold), 0 12px 28px -4px var(--gold-soft);
-}
 
 .mentor-top-code-bar {
   display: flex;
@@ -3008,10 +3003,10 @@ button {
 /* Lively Mentor Card Layout */
 .mentor-tile {
   background: #FFFFFF;
-  border: 1px solid rgba(220, 215, 205, 0.7);
+  border: 1.5px solid var(--gold);
   border-radius: var(--radius-xl);
-  padding: 24px 20px;
-  box-shadow: 0 4px 18px rgba(19, 42, 29, 0.04), 0 16px 36px -6px rgba(19, 42, 29, 0.05);
+  padding: 22px 18px;
+  box-shadow: 0 0 0 1px var(--gold), 0 8px 24px -4px var(--gold-soft);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
   position: relative;
   display: flex;
@@ -3021,8 +3016,7 @@ button {
 
 .mentor-tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(16, 185, 129, 0.14);
-  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 0 2px var(--gold), 0 16px 36px -4px rgba(217, 119, 6, 0.25);
 }
 
 .mentor-card-top-bar {
@@ -7082,10 +7076,6 @@ mentorsContainer.innerHTML = Object.entries(MENTORS).map(([id, m]) => `
       `).join("")}
     </ul>
 
-    <div class="mentor-tags-row">
-      ${m.teaches.map(t => `<span class="mentor-subject-tag">${t}</span>`).join("")}
-    </div>
-
     <button class="mentor-expand-btn" onclick="toggleMentorBio('${id}')" id="btn-mentor-${id}" aria-expanded="false" aria-controls="bio-mentor-${id}">
       <span class="btn-text">Read Full Journey & Philosophy</span>
       <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -7258,10 +7248,7 @@ function updateSelectionState() {
     if (item) item.mentors.forEach(m => hitMentorIds.add(m));
   });
 
-  document.querySelectorAll(".mentor-tile").forEach(tile => {
-    tile.classList.toggle("active-focus", hitMentorIds.has(tile.dataset.mentorId));
-  });
-
+  // Symmetrical: all mentor cards retain their golden frame without uneven toggling
   const recallBox = document.getElementById("problemRecallLive");
   if (selectedProblems.size > 0) {
     const names = Array.from(selectedProblems).map(id => PROBLEMS.find(p => p.id === id).shortName);
