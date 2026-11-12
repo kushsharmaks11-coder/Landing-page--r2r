@@ -5000,6 +5000,17 @@ button {
   color: #FFFFFF;
 }
 
+@keyframes diagCardOpen {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .diag-detail-card {
   background: #FFFFFF;
   border: 1px solid rgba(19, 42, 29, 0.1);
@@ -5008,7 +5019,7 @@ button {
   box-shadow: 0 8px 30px rgba(19, 42, 29, 0.05);
   max-width: 980px;
   margin: 0 auto;
-  transition: all 0.22s ease;
+  animation: diagCardOpen 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .diag-header-meta {
   display: flex;
@@ -5449,7 +5460,7 @@ button {
 
       <!-- 4 Diagnostic Tabs (Horizontal Swipe on Mobile, Centered on Desktop) -->
       <div class="diag-tabs-nav" id="diagTabsNav">
-        <button class="diag-tab-btn active" data-problem="ppdt-screening" onclick="switchDiagProblem('ppdt-screening')">
+        <button class="diag-tab-btn" data-problem="ppdt-screening" onclick="switchDiagProblem('ppdt-screening')">
           <span class="diag-tab-tag">DAY 1 · SCREENING</span>
           <span class="diag-tab-name">⚡ PPDT Screen-Out</span>
         </button>
@@ -5467,9 +5478,9 @@ button {
         </button>
       </div>
 
-      <!-- Single Active Diagnostic Card (Zero scroll bloat) -->
-      <div class="diag-detail-card" id="diagDetailCard">
-        <!-- Rendered via renderDiagDetail() on load -->
+      <!-- Single Active Diagnostic Card (Hidden initially, expands on click) -->
+      <div class="diag-detail-card" id="diagDetailCard" style="display:none;">
+        <!-- Rendered via renderDiagDetail() on click -->
       </div>
     </div>
   </section>
@@ -6946,9 +6957,22 @@ window.switchStudioPhoto = switchStudioPhoto;
 
 
 /* --- CANDIDATE DIAGNOSTIC CONSOLE (1-SCREEN SCAN) --- */
-let activeDiagId = "ppdt-screening";
+let activeDiagId = null;
 
 function switchDiagProblem(problemId) {
+  const container = document.getElementById("diagDetailCard");
+  
+  // Toggle off if already open
+  if (activeDiagId === problemId) {
+    activeDiagId = null;
+    document.querySelectorAll(".diag-tab-btn").forEach(btn => btn.classList.remove("active"));
+    if (container) {
+      container.style.display = "none";
+      container.innerHTML = "";
+    }
+    return;
+  }
+
   activeDiagId = problemId;
   document.querySelectorAll(".diag-tab-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.problem === problemId);
@@ -6961,10 +6985,15 @@ window.switchDiagProblem = switchDiagProblem;
 function renderDiagDetail() {
   const container = document.getElementById("diagDetailCard");
   if (!container) return;
+  if (!activeDiagId) {
+    container.style.display = "none";
+    return;
+  }
   const p = PROBLEMS.find(item => item.id === activeDiagId);
   if (!p) return;
   const studentStory = STORIES.find(s => s.id === p.storyId);
 
+  container.style.display = "block";
   container.innerHTML = `
     <div class="diag-header-meta">
       <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
@@ -7005,7 +7034,7 @@ function updateDiagMentorFocus() {
   // Symmetrical: all mentor cards retain their golden frame without uneven toggling
 }
 
-renderDiagDetail();
+// Initial state: 4 tags display cleanly unselected; detail card opens on click
 renderStageDetail();
 updateDiagMentorFocus();
 
