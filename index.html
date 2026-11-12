@@ -945,7 +945,7 @@ button {
 /* Mode Switcher Tabs */
 .deck-mode-tabs {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr 1fr;
   gap: 6px;
   background: rgba(11, 41, 27, 0.05);
   padding: 4px;
@@ -958,10 +958,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 12px;
+  gap: 5px;
+  padding: 7px 8px;
   border-radius: 9px;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 750;
   color: #385042;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -985,14 +985,14 @@ button {
 
 .tab-live-tag {
   font-family: monospace;
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 800;
   background: #ECFDF5;
   color: var(--primary-emerald);
   border: 1px solid var(--primary-emerald-border);
   padding: 1px 5px;
   border-radius: 4px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
 }
@@ -5112,7 +5112,7 @@ button {
             <div class="deck-mode-tabs">
               <button class="deck-tab active" id="tabSim" onclick="switchDeckMode('sim')">
                 <span>🎙️ Interview Simulator</span>
-                <span class="tab-live-tag">● LIVE INTERACTIVE</span>
+                <span class="tab-live-tag">● LIVE</span>
               </button>
               <button class="deck-tab" id="tabStory" onclick="switchDeckMode('story')">
                 <span>🎬 Aspirant's Story Reel</span>
