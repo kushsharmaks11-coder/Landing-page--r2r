@@ -2825,112 +2825,6 @@ button {
   white-space: nowrap;
 }
 
-.mentor-expand-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 14px;
-  padding: 9px 14px;
-  background: #F8FAF7;
-  border: 1px solid var(--line-subtle);
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--primary-deep);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-.mentor-expand-btn:hover {
-  background: #ECFDF5;
-  border-color: var(--primary-accent);
-  color: var(--primary-accent);
-}
-
-.mentor-expand-btn.expanded {
-  background: var(--primary-deep);
-  color: #FFFFFF;
-  border-color: var(--primary-deep);
-}
-
-.mentor-expand-btn .chevron-icon {
-  transition: transform 0.3s ease;
-}
-
-.mentor-expand-btn.expanded .chevron-icon {
-  transform: rotate(180deg);
-}
-
-.mentor-bio-drawer {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.mentor-bio-drawer.open {
-  max-height: 800px;
-  opacity: 1;
-}
-
-.mentor-bio-content {
-  padding-top: 12px;
-}
-
-.bio-section-divider {
-  height: 1px;
-  background: var(--line-subtle);
-  margin-bottom: 10px;
-}
-
-.bio-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--text-dim);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.bio-text {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #374151;
-}
-
-.bio-cta-row {
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--line-subtle);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.mentor-direct-wa-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #065F46;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.mentor-direct-wa-btn:hover {
-  background: var(--wa);
-  color: #FFFFFF;
-  border-color: var(--wa);
-}
-
-
 /* ========================================================
    LIGHT BACKGROUND DESIGNS & STRUCTURES (AESTHETIC UPGRADE)
    ======================================================== */
@@ -3170,128 +3064,6 @@ button {
   padding: 4px 9px;
   border-radius: 8px;
   white-space: nowrap;
-}
-
-.mentor-expand-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 14px;
-  padding: 10px 14px;
-  background: #F8FAF7;
-  border: 1px solid rgba(19, 42, 29, 0.08);
-  border-radius: 12px;
-  font-size: 12.5px;
-  font-weight: 750;
-  color: var(--primary-deep);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-.mentor-expand-btn:hover {
-  background: #ECFDF5;
-  border-color: #10B981;
-  color: #047857;
-}
-
-.mentor-expand-btn.expanded {
-  background: var(--primary-deep);
-  color: #FFFFFF;
-  border-color: var(--primary-deep);
-}
-
-.mentor-expand-btn .chevron-icon {
-  transition: transform 0.3s ease;
-}
-
-.mentor-expand-btn.expanded .chevron-icon {
-  transform: rotate(180deg);
-}
-
-.mentor-bio-drawer {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.mentor-bio-drawer.open {
-  opacity: 1;
-}
-
-.mentor-bio-content {
-  padding-top: 16px;
-}
-
-.bio-section-divider {
-  height: 1px;
-  background: rgba(19, 42, 29, 0.08);
-  margin-bottom: 12px;
-}
-
-.bio-label {
-  font-family: var(--font-main);
-  font-size: 10px;
-  font-weight: 800;
-  color: #047857;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.bio-text {
-  font-size: 12.5px;
-  color: #4B5563;
-  line-height: 1.6;
-}
-
-.bio-links-row {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed rgba(19, 42, 29, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.mentor-official-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #1E40AF;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.mentor-official-link:hover {
-  text-decoration: underline;
-  color: #1D4ED8;
-}
-
-.mentor-direct-wa-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 750;
-  color: #065F46;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.mentor-direct-wa-btn:hover {
-  background: var(--wa);
-  color: #FFFFFF;
-  border-color: var(--wa);
 }
 
 /* FAQ Bottom Support Card */
@@ -5183,7 +4955,7 @@ button {
 .mentor-credentials-bullets {
   list-style: none;
   padding: 0;
-  margin: 14px 0 16px;
+  margin: 14px 0 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -6733,7 +6505,6 @@ const MENTORS = {
       "Mentored 580+ recommendations with zero rote scripts since 2019"
     ],
     quote: "We built R2R to bridge the gap between coaching institute promises and actual selection board reality.",
-    bio: "Recommended twice for Indian Army through CDS entry (AIR-19 in CDS-1 2018). Qualified NDA and AFCAT exams.<br><br>In the teaching and mentorship industry since 2019 across leading institutes as faculty for SSB, defense exams, and freelance evaluator for UPSC Civil Services. After experiencing the flawed learning outcomes of mass coaching institutes firsthand, I founded R2R to provide deep psychological deconstruction, authentic self-projection, and an individualized roadmap that reduces the distance to recommendation by a significant margin.",
     color: "#0B1F13"
   },
   neha: {
@@ -6752,7 +6523,6 @@ const MENTORS = {
       "Specialist in Subconscious Narrative Analysis & Authentic Self-Projection"
     ],
     quote: "The SSB isn't about perfection; it's about authentic projection — showing who you truly are.",
-    bio: "Thrice Recommended candidate with a Masters in Health Administration from TISS Mumbai.<br><br>Coming from an Air Force and DRDO defence family, the uniform was a deeply personal dream. My journey taught me that SSB psychologists detect memorized templates within thirty seconds. At R2R, I guide candidates to analyze their subconscious writing patterns, bring authentic structure to their life stories, and project their genuine strengths with total poise.",
     color: "#1E3A8A"
   },
   rahul: {
@@ -6771,7 +6541,6 @@ const MENTORS = {
       "Forensic PIQ deconstruction & boardroom stress interview simulations"
     ],
     quote: "The SSB is not about creating a perfect persona; it's about authentic projection through deep self-introspection.",
-    bio: "SSB Recommended JAG-35, AIR 9 and practicing advocate specializing in Armed Forces Tribunal litigation.<br><br>Carrying forward a military family legacy, I focus on forensic PIQ deconstruction. In our one-on-one sessions, we conduct boardroom-level stress interview simulations and eliminate narrative contradictions, ensuring you can defend every life choice, hobby, and decision before the Interviewing Officer with conviction.",
     color: "#991B1B"
   }
 };
@@ -7085,11 +6854,6 @@ mentorsContainer.innerHTML = Object.entries(MENTORS).map(([id, m]) => `
     </ul>
   </div>
 `).join("");
-
-function toggleMentorBio(id) {
-  // Bio button removed for clean symmetry and concise card height
-}
-window.toggleMentorBio = toggleMentorBio;
 
 /* --- STUDIO CLASSROOM PHOTO SWITCHER --- */
 function switchStudioPhoto(type) {
