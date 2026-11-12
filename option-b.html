@@ -5201,6 +5201,139 @@ button {
   color: var(--primary-emerald);
   margin-top: 2px;
 }
+
+/* --- CANDIDATE DIAGNOSTIC CONSOLE (1-SCREEN SCAN) --- */
+.diag-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 20px;
+}
+.diag-tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border: 1px solid rgba(19, 42, 29, 0.12);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  min-width: 145px;
+  text-align: center;
+}
+.diag-tab-btn:hover {
+  border-color: var(--primary-emerald);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.12);
+}
+.diag-tab-btn.active {
+  background: #0B291B;
+  border-color: #0B291B;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(11, 41, 27, 0.2);
+}
+.diag-tab-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #DC2626;
+  text-transform: uppercase;
+}
+.diag-tab-btn.active .diag-tab-tag {
+  color: #F87171;
+}
+.diag-tab-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.diag-tab-btn.active .diag-tab-name {
+  color: #FFFFFF;
+}
+
+.diag-detail-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(19, 42, 29, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 26px 28px;
+  box-shadow: 0 8px 30px rgba(19, 42, 29, 0.05);
+  max-width: 980px;
+  margin: 0 auto;
+  transition: all 0.22s ease;
+}
+.diag-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px dashed rgba(19, 42, 29, 0.12);
+}
+.diag-full-q {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-deep);
+  line-height: 1.35;
+  margin: 0;
+}
+.diag-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+@media (max-width: 768px) {
+  .diag-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+@media (max-width: 640px) {
+  #diagnostic {
+    padding-top: 30px !important;
+    padding-bottom: 42px !important;
+  }
+  .diag-tabs-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px 16px 10px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 12px -16px 14px;
+  }
+  .diag-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .diag-tab-btn {
+    flex: 0 0 auto;
+    min-width: 135px;
+    padding: 8px 12px;
+  }
+  .diag-detail-card {
+    padding: 18px 15px;
+    margin-bottom: 16px;
+  }
+  .diag-full-q {
+    font-size: 15px;
+  }
+  .diag-pill-desc {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
 </style>
 </head>
 <body>
@@ -5243,6 +5376,7 @@ button {
       </a>
 
       <nav class="nav-links-pc">
+        <a href="#diagnostic">Diagnostics</a>
         <a href="#why">Studio vs Factory</a>
         <a href="#stages">5-Day Testing</a>
         <a href="#mentors">Mentors</a>
@@ -5500,10 +5634,48 @@ button {
     </div>
   </section>
 
+  <!-- ========================================================
+       SECTION 2: CANDIDATE DIAGNOSTICS (1-SCREEN SCAN CONSOLE)
+       ======================================================== -->
+  <section class="section-wrap" id="diagnostic" style="padding-top: 52px; padding-bottom: 52px; position:relative; overflow:hidden;">
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="text-center" style="max-width:780px; margin: 0 auto 16px;">
+        <div class="section-coord-tag">✦ Candidate Diagnostics</div>
+        <h2 class="section-title">Where Did Your Last SSB <span class="text-highlight-crimson">Actually Break Down?</span></h2>
+        <p class="section-sub" style="margin-bottom:0;">
+          Tap your previous roadblock below to see why repeat attempts stall—and how our 15-seat studio deconstructs it.
+        </p>
+      </div>
 
+      <!-- 4 Diagnostic Tabs (Horizontal Swipe on Mobile, Centered on Desktop) -->
+      <div class="diag-tabs-nav" id="diagTabsNav">
+        <button class="diag-tab-btn active" data-problem="ppdt-screening" onclick="switchDiagProblem('ppdt-screening')">
+          <span class="diag-tab-tag">DAY 1 · SCREENING</span>
+          <span class="diag-tab-name">⚡ PPDT Screen-Out</span>
+        </button>
+        <button class="diag-tab-btn" data-problem="tat-psychology" onclick="switchDiagProblem('tat-psychology')">
+          <span class="diag-tab-tag">DAY 2 · PSYCHOLOGY</span>
+          <span class="diag-tab-name">🧠 Scripted TAT / WAT</span>
+        </button>
+        <button class="diag-tab-btn" data-problem="interview-piq" onclick="switchDiagProblem('interview-piq')">
+          <span class="diag-tab-tag">DAYS 2–4 · INTERVIEW</span>
+          <span class="diag-tab-name">🎙️ Rapid-Fire PIQ</span>
+        </button>
+        <button class="diag-tab-btn" data-problem="sd-congruence" onclick="switchDiagProblem('sd-congruence')">
+          <span class="diag-tab-tag">ALL DAYS · TRUTH</span>
+          <span class="diag-tab-name">⚖️ Dossier Clashes</span>
+        </button>
+      </div>
+
+      <!-- Single Active Diagnostic Card (Zero scroll bloat) -->
+      <div class="diag-detail-card" id="diagDetailCard">
+        <!-- Rendered via renderDiagDetail() on load -->
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================================
-       SECTION 2: THE CONTRAST (FACTORY VS STUDIO)
+       SECTION 3: THE CONTRAST (FACTORY VS STUDIO)
        ======================================================== -->
   <section class="section-wrap alt-bg" id="why" style="position:relative; overflow:hidden;">
     <!-- Authentic Indian Army Tri-Services Backdrop (NDA / IMA Drill) -->
@@ -6966,115 +7138,74 @@ function switchStudioPhoto(type) {
 window.switchStudioPhoto = switchStudioPhoto;
 
 
-/* --- RENDER PROBLEMS ACCORDION --- */
-const selectedProblems = new Set();
-const problemsStack = document.getElementById("problemsStack");
+/* --- CANDIDATE DIAGNOSTIC CONSOLE (1-SCREEN SCAN) --- */
+let activeDiagId = "ppdt-screening";
 
-function renderProblems() {
-  if (!problemsStack) return;
-  problemsStack.innerHTML = PROBLEMS
-    .map((p, idx) => {
-      const isOpen = selectedProblems.has(p.id);
-      const studentStory = STORIES.find(s => s.id === p.storyId);
-      const numStr = String(idx + 1).padStart(2, "0");
-      return `
-        <div class="problem-accordion-card  ${isOpen ? "open" : ""}" data-id="${p.id}">
-          <button class="problem-head-trigger" aria-expanded="${isOpen}">
-            <span class="problem-num-badge">${numStr}</span>
-            <div class="problem-q-txt">${p.question}</div>
-            <div class="problem-arrow">
-              <svg width="14" height="14"><use href="#icon-chevron-down"/></svg>
-            </div>
-          </button>
-          
-          <div class="problem-drawer">
-            <div class="problem-drawer-inner">
-              <div class="problem-body-content">
-                <div class="diag-pill-box">
-                  <span class="diag-pill-title">Why It Happens at the Board</span>
-                  <p class="diag-pill-desc">${p.why}</p>
-                </div>
-                
-                <div class="diag-pill-box fix">
-                  <span class="diag-pill-title">How R2R Works on It With You</span>
-                  <p class="diag-pill-desc">${p.how}</p>
-                </div>
+function switchDiagProblem(problemId) {
+  activeDiagId = problemId;
+  document.querySelectorAll(".diag-tab-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.problem === problemId);
+  });
+  renderDiagDetail();
+  updateDiagMentorFocus();
+}
+window.switchDiagProblem = switchDiagProblem;
 
-                <div class="problem-footer-tags">
-                  <div style="display:flex; gap:5px; align-items:center; flex-wrap:wrap;">
-                    <span style="font-size:11px; color:var(--text-dim);">Lead Mentors:</span>
-                    ${p.mentors.map(mId => `
-                      <span class="mentor-chip-badge">
-                        <i style="background:${MENTORS[mId].color}"></i>
-                        ${MENTORS[mId].name}
-                      </span>
-                    `).join("")}
-                  </div>
-                  ${studentStory ? `
-                    <a href="${studentStory.url}" target="_blank" rel="noopener noreferrer" class="story-shortcut-link" title="Read ${studentStory.name}'s verified story on R2R">
-                      ${studentStory.name}'s story ↗
-                    </a>
-                  ` : ""}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join("");
+function renderDiagDetail() {
+  const container = document.getElementById("diagDetailCard");
+  if (!container) return;
+  const p = PROBLEMS.find(item => item.id === activeDiagId);
+  if (!p) return;
+  const studentStory = STORIES.find(s => s.id === p.storyId);
+
+  container.innerHTML = `
+    <div class="diag-header-meta">
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="stage-badge-pill" style="background:#FEE2E2; color:#DC2626; border-color:rgba(220,38,38,0.25);">${p.stage}</span>
+        <h3 class="diag-full-q">${p.question}</h3>
+      </div>
+    </div>
+    <div class="diag-detail-grid">
+      <div class="diag-pill-box">
+        <span class="diag-pill-title">❌ Why It Breaks at the Board</span>
+        <p class="diag-pill-desc">${p.why}</p>
+      </div>
+      <div class="diag-pill-box fix">
+        <span class="diag-pill-title">✓ How R2R Works on It With You</span>
+        <p class="diag-pill-desc">${p.how}</p>
+      </div>
+    </div>
+    <div class="problem-footer-tags">
+      <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+        <span style="font-size:11.5px; font-weight:700; color:var(--text-dim);">Lead Mentors:</span>
+        ${p.mentors.map(mId => `
+          <span class="mentor-chip-badge">
+            <i style="background:${MENTORS[mId].color}"></i>
+            ${MENTORS[mId].name}
+          </span>
+        `).join("")}
+      </div>
+      ${studentStory ? `
+        <a href="${studentStory.url}" target="_blank" rel="noopener noreferrer" class="story-shortcut-link" title="Read ${studentStory.name}'s verified story on R2R">
+          Read ${studentStory.name}'s story ↗
+        </a>
+      ` : ""}
+    </div>
+  `;
 }
 
-renderProblems();
-renderStageDetail();
-
-// Accordion toggle & dynamic state update
-if (problemsStack) {
-  problemsStack.addEventListener("click", e => {
-    // Allow direct link navigation for story links
-    if (e.target.closest(".story-shortcut-link")) {
-      return;
-    }
-
-    const trigger = e.target.closest(".problem-head-trigger");
-    if (!trigger) return;
-    const card = trigger.closest(".problem-accordion-card");
-    const pId = card.dataset.id;
-
-    if (selectedProblems.has(pId)) {
-      selectedProblems.delete(pId);
-      card.classList.remove("open");
-      trigger.setAttribute("aria-expanded", "false");
-    } else {
-      selectedProblems.add(pId);
-      card.classList.add("open");
-      trigger.setAttribute("aria-expanded", "true");
-    }
-
-    updateSelectionState();
-  });
-}
-
-function updateSelectionState() {
-  const hitMentorIds = new Set();
-  selectedProblems.forEach(id => {
-    const item = PROBLEMS.find(p => p.id === id);
-    if (item) item.mentors.forEach(m => hitMentorIds.add(m));
-  });
-
+function updateDiagMentorFocus() {
+  const p = PROBLEMS.find(item => item.id === activeDiagId);
+  if (!p) return;
+  const hitMentorIds = new Set(p.mentors);
   document.querySelectorAll(".mentor-tile").forEach(tile => {
     tile.classList.toggle("active-focus", hitMentorIds.has(tile.dataset.mentorId));
   });
-
-  const recallBox = document.getElementById("problemRecallLive");
-  if (selectedProblems.size > 0) {
-    const names = Array.from(selectedProblems).map(id => PROBLEMS.find(p => p.id === id).shortName);
-    const textPreview = names.slice(0, 3).join(", ") + (names.length > 3 ? ` and ${names.length - 3} more` : "");
-    recallBox.hidden = false;
-    recallBox.innerHTML = `You noted challenges with: <b>${textPreview}</b>. That is exactly where our training starts.`;
-  } else {
-    recallBox.hidden = true;
-  }
 }
+
+renderDiagDetail();
+renderStageDetail();
+updateDiagMentorFocus();
 
 /* --- RENDER REAL JOURNEYS & CAROUSEL CONTROLLER --- */
 const storiesSnapTrack = document.getElementById("storiesSnapTrack");
