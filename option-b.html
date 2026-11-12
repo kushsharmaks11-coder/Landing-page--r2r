@@ -7055,55 +7055,11 @@ mentorsContainer.innerHTML = Object.entries(MENTORS).map(([id, m]) => `
         </li>
       `).join("")}
     </ul>
-
-    <button class="mentor-expand-btn" onclick="toggleMentorBio('${id}')" id="btn-mentor-${id}" aria-expanded="false" aria-controls="bio-mentor-${id}">
-      <span class="btn-text">Read Full Journey & Philosophy</span>
-      <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
-
-    <div class="mentor-bio-drawer" id="bio-mentor-${id}" aria-hidden="true">
-      <div class="mentor-bio-content">
-        <div class="bio-section-divider"></div>
-        <div class="bio-label">OFFICER CANDIDACY & SELECTION RECORD</div>
-        <div class="bio-text">
-          ${m.bio}
-        </div>
-        <div class="bio-links-row">
-          <a href="${m.mainSiteUrl || 'https://r2rssb.graphy.com/s/pages/about-mentors'}" target="_blank" rel="noopener" class="mentor-official-link">
-            <span>Read on official website (r2rssb.com)</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-          <a href="${WA_URL}" target="_blank" rel="noopener" class="mentor-direct-wa-btn">
-            <svg class="btn-icon" width="13" height="13"><use href="#icon-wa"/></svg>
-            <span>Connect on WhatsApp</span>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 `).join("");
 
 function toggleMentorBio(id) {
-  const drawer = document.getElementById(`bio-mentor-${id}`);
-  const btn = document.getElementById(`btn-mentor-${id}`);
-  if (!drawer || !btn) return;
-  
-  const isOpen = drawer.classList.contains("open");
-  if (isOpen) {
-    drawer.classList.remove("open");
-    drawer.setAttribute("aria-hidden", "true");
-    btn.classList.remove("expanded");
-    btn.setAttribute("aria-expanded", "false");
-    btn.querySelector(".btn-text").textContent = "Know More";
-  } else {
-    drawer.classList.add("open");
-    drawer.setAttribute("aria-hidden", "false");
-    btn.classList.add("expanded");
-    btn.setAttribute("aria-expanded", "true");
-    btn.querySelector(".btn-text").textContent = "Show Less";
-  }
+  // Bio button removed for clean symmetry and concise card height
 }
 window.toggleMentorBio = toggleMentorBio;
 
