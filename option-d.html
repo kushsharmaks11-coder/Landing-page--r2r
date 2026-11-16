@@ -45,7 +45,9 @@ a{color:var(--ink)}
 :focus-visible{outline:3px solid #2f6fdb;outline-offset:2px;border-radius:4px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 h1,h2,h3{color:var(--ink);font-stretch:85%;line-height:1.12;margin:0;letter-spacing:-0.01em}
-h1{font-size:clamp(2.1rem,7.6vw,3.4rem);font-weight:780}
+h1{font-size:clamp(1.75rem,2.4vw,2.15rem);font-weight:780;line-height:1.18}
+.dt-br{display:none}
+@media (min-width:760px){.dt-br{display:inline}}
 h2{font-size:clamp(1.6rem,5.4vw,2.2rem);font-weight:740}
 h3{font-size:1.12rem;font-weight:700;font-stretch:95%}
 p{margin:0}
@@ -220,7 +222,7 @@ footer p+p{margin-top:10px}
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <h1>Stop memorising answers. Get recommended as yourself.</h1>
+      <h1>Everyone says “Be yourself.” <br class="dt-br">But do you know who you are?</h1>
       <p class="lede">SSB interview mentorship for NDA, CDS, AFCAT, TES and JAG. Batches of 15, online or in Patel Nagar, Delhi. Mentors go through your TAT, WAT, SRT and PIQ with you, one by one.</p>
 
       <ul class="facts">
