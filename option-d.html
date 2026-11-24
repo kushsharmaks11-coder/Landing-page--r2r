@@ -97,6 +97,7 @@ p{margin:0}
 /* Hero */
 .hero{padding:28px 0 36px}
 .hero .grid{display:grid;gap:26px}
+.hl-quote{color:#0b783f;background:linear-gradient(120deg,rgba(15,127,67,0.12),rgba(201,162,74,0.14));padding:2px 8px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone;display:inline}
 .studio-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:20px;background:rgba(201,162,74,0.12);border:1px solid rgba(201,162,74,0.3);color:#82641a;font-size:0.76rem;font-weight:720;letter-spacing:0.02em;margin-bottom:12px;text-transform:uppercase}
 .radar-beacon{width:8px;height:8px;border-radius:50%;background:var(--go);display:inline-block;position:relative;flex-shrink:0}
 .radar-beacon::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--go);animation:pulseBeacon 2.2s infinite ease-out}
@@ -112,14 +113,16 @@ p{margin:0}
 .hero .note svg{width:16px;height:16px;color:var(--go);flex-shrink:0}
 
 /* Live Admissions Scarcity Card */
-.live-scarcity{margin-top:16px;padding:14px 18px;background:#0d1a30;color:#e2e8f0;border:1px solid rgba(201,162,74,0.3);border-radius:var(--r);font-size:.92rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 4px 16px rgba(15,30,54,0.12)}
+.live-scarcity{margin-top:16px;padding:14px 18px;background:#ffffff;color:var(--text);border:1.5px solid rgba(201,162,74,0.45);border-left:4px solid var(--go);border-radius:var(--r);font-size:.92rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 4px 16px rgba(15,30,54,0.06)}
 .live-scarcity-left{display:flex;align-items:center;gap:10px}
-.live-dot{width:9px;height:9px;border-radius:50%;background:#38d39f;box-shadow:0 0 8px #38d39f;flex-shrink:0}
-.live-scarcity strong{color:#fff;font-weight:750}
-.live-scarcity .badge-cap{background:rgba(201,162,74,0.18);color:#e5c46d;font-size:.76rem;font-weight:750;padding:3px 9px;border-radius:6px;border:1px solid rgba(201,162,74,0.35);text-transform:uppercase}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#0f7f43;box-shadow:0 0 8px rgba(15,127,67,0.5);flex-shrink:0}
+.live-scarcity strong{color:var(--ink);font-weight:750;font-size:.98rem;display:block}
+.live-scarcity .subtext{font-size:.82rem;color:var(--muted);margin-top:2px;font-weight:550}
+.live-scarcity .badge-cap{background:rgba(15,127,67,0.1);color:#0f7f43;font-size:.76rem;font-weight:750;padding:4px 10px;border-radius:6px;border:1px solid rgba(15,127,67,0.28);text-transform:uppercase}
 .hero figure{margin:0;position:relative}
-.hero figure img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 50%;border:1px solid var(--line);box-shadow:0 12px 32px -6px rgba(15,30,54,.14), 0 0 0 1px rgba(255,255,255,.9);transition:transform .35s ease}
-@media (min-width:760px){.hero figure img{aspect-ratio:16/11}}
+.hero figure img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 28%;border:1px solid var(--line);box-shadow:0 12px 32px -6px rgba(15,30,54,.14), 0 0 0 1px rgba(255,255,255,.9);transition:transform .35s ease}
+.figure-badge{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:7px;background:rgba(15,30,54,0.88);color:#fff;font-size:.74rem;font-weight:750;letter-spacing:.02em;padding:4px 10px;border-radius:6px;backdrop-filter:blur(4px);box-shadow:0 2px 8px rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.18);z-index:2}
+.figure-badge .live-dot-red{width:7px;height:7px;border-radius:50%;background:#ef4444;box-shadow:0 0 6px #ef4444}
 .hero figure:hover img{transform:scale(1.02)}
 .hero figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
 
@@ -278,8 +281,9 @@ footer p+p{margin-top:10px}
 
 @media (min-width:760px){
   body{font-size:18px}
-  .hero{padding:48px 0 56px}
-  .hero .grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
+  .hero{padding:48px 0 54px}
+  .hero .grid{grid-template-columns:1fr 1.08fr;align-items:center;gap:40px}
+  .hero figure img{aspect-ratio:4/3;min-height:430px;object-fit:cover;object-position:50% 25%}
   .hero .btn{width:auto}
   .pf{grid-template-columns:repeat(3,1fr);gap:28px}
   .mentors,.quotes{grid-template-columns:repeat(3,1fr)}
@@ -299,7 +303,7 @@ footer p+p{margin-top:10px}
 </svg>
 
 <div class="ticker-ribbon" role="region" aria-label="Cohort admissions status">
-  <span class="star">★</span> <span>Next Cohort: Strictly 15 Candidates</span> <span class="highlight">· Delhi Studio &amp; Online Live</span> <span class="star">★</span> <span>Admissions Open</span>
+  <span class="star">★</span> <span>Next Cohort: Delhi Studio (15 Seats Max)</span> <span class="highlight">· Online Live Cohorts Open</span> <span class="star">★</span> <span>Admissions Open</span>
 </div>
 
 <header class="top">
@@ -322,19 +326,19 @@ footer p+p{margin-top:10px}
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <div class="studio-tag"><span class="radar-beacon"></span><span>Patel Nagar Studio & Online Live</span> · Strictly 15 Candidates</div>
-      <h1>Everyone says “Be yourself.” <br class="dt-br">But do you know who you are?</h1>
-      <p class="lede">SSB interview mentorship for NDA, CDS, AFCAT, TES and JAG. Batches of 15, online or in Patel Nagar, Delhi. Mentors go through your TAT, WAT, SRT and PIQ with you, one by one.</p>
+      <div class="studio-tag"><span class="radar-beacon"></span><span>Delhi Studio (15 Seats Max) &amp; Online Live</span></div>
+      <h1>Everyone says <span class="hl-quote">“Be yourself.”</span> <br class="dt-br">But do you know who you are?</h1>
+      <p class="lede">1-on-1 psychological dossier audit and personal interview profiling for NDA, CDS, AFCAT &amp; JAG. Live online or in our Patel Nagar Delhi studio.</p>
 
       <ul class="facts">
         <li><b>580+</b><span>candidates recommended</span></li>
         <li><b><a href="https://www.google.com/search?q=Road+to+Recommendation+SSB+Patel+Nagar+reviews" target="_blank" rel="noopener" data-fill="rating">5.0★</a></b><span data-fill="reviews">147 Google reviews</span></li>
-        <li><b>15</b><span>candidates per batch, maximum</span></li>
+        <li><b>15</b><span>candidates max in Delhi studio (offline)</span></li>
       </ul>
 
       <div class="act">
         <a class="btn block wa" data-cta="hero" href="https://wa.me/919971910683?text=Hi"><svg aria-hidden="true"><use href="#wa"/></svg>Chat with us on WhatsApp</a>
-        <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Direct WhatsApp with Mentors · No call center bots · Immediate batch schedule</p>
+        <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Message us on WhatsApp · Instant batch dates, fees &amp; call scheduling</p>
       </div>
 
       <div class="live-scarcity">
@@ -342,14 +346,15 @@ footer p+p{margin-top:10px}
           <span class="live-dot"></span>
           <div>
             <strong data-fill="nextBatch">Batches start every 15 days</strong>
-            <div style="font-size:.82rem;color:#94a3b8;margin-top:2px">Online ₹12,000 · Delhi Classroom ₹18,000</div>
+            <div class="subtext">Online Live: ₹12,000 · Delhi Classroom: ₹18,000</div>
           </div>
         </div>
-        <span class="badge-cap">Strictly 15 Seats</span>
+        <span class="badge-cap">Delhi Studio: 15 Seats Only</span>
       </div>
     </div>
 
     <figure>
+      <div class="figure-badge"><span class="live-dot-red"></span>Live Studio · Patel Nagar, Delhi</div>
       <img src="images/opt/shashank-teaching-whiteboard.jpg" width="1024" height="682" alt="Shashank Rai teaching Personality Development factors inside the Patel Nagar Studio, New Delhi" loading="eager" fetchpriority="high">
       <figcaption>Shashank Rai teaching Personality Development factors inside the Patel Nagar Studio, New Delhi.</figcaption>
     </figure>
@@ -666,7 +671,7 @@ footer p+p{margin-top:10px}
           <li>Live PPDT &amp; TAT simulation with real-time screen sharing</li>
           <li>1-on-1 mock interviews on video with Advocate Rahul Sharma</li>
           <li>Complete session recordings provided, yours to keep</li>
-          <li>Strictly 15 candidates per online batch</li>
+          <li>Small interactive live cohorts with 1-on-1 dossier feedback</li>
         </ul>
         <a class="btn block wa" data-cta="online" href="https://wa.me/919971910683?text=Hi"><svg aria-hidden="true"><use href="#wa"/></svg>Ask about the online batch</a>
         <p class="alt-link">Ready to enrol? <a href="https://r2rssb.graphy.com/s/store" target="_blank" rel="noopener">Enrol on our course portal</a></p>
@@ -806,7 +811,7 @@ var MESSAGES = {
   var fill = {
     nextOnline: CONFIG.nextOnline ? CONFIG.nextOnline : null,
     nextOffline: CONFIG.nextOffline ? CONFIG.nextOffline : null,
-    nextBatch: next ? "Next batch starts " + next + "." : "Batches start every 15 days (strictly 15 seats).",
+    nextBatch: next ? "Next batch starts " + next + "." : "Batches start every 15 days.",
     rating: CONFIG.rating + "★",
     reviews: CONFIG.reviews + " Google reviews",
     ratingLong: "Rated " + CONFIG.rating + " from " + CONFIG.reviews + " reviews on Google"
