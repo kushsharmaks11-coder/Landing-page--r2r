@@ -64,6 +64,11 @@ h2{font-size:clamp(1.6rem,5.4vw,2.2rem);font-weight:740}
 h3{font-size:1.12rem;font-weight:700;font-stretch:95%}
 p{margin:0}
 
+/* Top Marquee Urgency Ribbon */
+.ticker-ribbon{background:linear-gradient(90deg,#0a1526,#122340,#0a1526);color:#f1f5f9;font-size:.78rem;font-weight:750;letter-spacing:.04em;text-transform:uppercase;padding:8px 16px;text-align:center;border-bottom:1px solid rgba(201,162,74,0.28);display:flex;align-items:center;justify-content:center;gap:8px}
+.ticker-ribbon span.star{color:#e3a008}
+.ticker-ribbon span.highlight{color:#38d39f;font-weight:800}
+
 /* Header */
 .top{border-bottom:1px solid var(--line);background:var(--paper)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
@@ -78,11 +83,11 @@ p{margin:0}
 .top .wa-mini svg{width:20px;height:20px}
 
 /* Buttons & Shimmer Effect */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:var(--r);background:var(--go);color:#fff;font-weight:700;font-size:1.06rem;text-decoration:none;border:0;cursor:pointer;position:relative;overflow:hidden;transition:background .2s, transform .2s ease, box-shadow .2s ease}
-.btn:hover{background:var(--go-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(15,127,67,.28)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:var(--r);background:linear-gradient(135deg,#0f7f43,#128c4b);color:#fff;font-weight:700;font-size:1.06rem;text-decoration:none;border:0;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 4px 18px rgba(15,127,67,.32);transition:background .2s, transform .2s ease, box-shadow .2s ease}
+.btn:hover{background:linear-gradient(135deg,#0b6635,#0f7f43);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,127,67,.45)}
 .btn svg{width:22px;height:22px;flex:none}
 .btn.block{width:100%}
-.btn.wa::after{content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:skewX(-20deg);animation:shimmerSweep 4.5s infinite ease-in-out}
+.btn.wa::after{content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.28),transparent);transform:skewX(-20deg);animation:shimmerSweep 4.5s infinite ease-in-out}
 @keyframes shimmerSweep{0%,65%{left:-100%}100%{left:200%}}
 
 /* Scroll reveal animations */
@@ -103,20 +108,28 @@ p{margin:0}
 .facts span{font-size:.86rem;color:var(--muted);line-height:1.3;display:block}
 .facts a{color:inherit}
 .hero .act{margin-top:22px}
-.hero .note{margin-top:10px;font-size:.92rem;color:var(--muted)}
-.batchline{margin-top:16px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);font-size:.96rem;box-shadow:0 2px 8px -2px rgba(15,30,54,.05)}
-.batchline strong{color:var(--ink)}
+.hero .note{margin-top:10px;font-size:.92rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.hero .note svg{width:16px;height:16px;color:var(--go);flex-shrink:0}
+
+/* Live Admissions Scarcity Card */
+.live-scarcity{margin-top:16px;padding:14px 18px;background:#0d1a30;color:#e2e8f0;border:1px solid rgba(201,162,74,0.3);border-radius:var(--r);font-size:.92rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 4px 16px rgba(15,30,54,0.12)}
+.live-scarcity-left{display:flex;align-items:center;gap:10px}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#38d39f;box-shadow:0 0 8px #38d39f;flex-shrink:0}
+.live-scarcity strong{color:#fff;font-weight:750}
+.live-scarcity .badge-cap{background:rgba(201,162,74,0.18);color:#e5c46d;font-size:.76rem;font-weight:750;padding:3px 9px;border-radius:6px;border:1px solid rgba(201,162,74,0.35);text-transform:uppercase}
 .hero figure{margin:0;position:relative}
-.hero figure img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 50%;border:1px solid var(--line);box-shadow:0 12px 32px -6px rgba(15,30,54,.14), 0 0 0 1px rgba(255,255,255,.9)}
+.hero figure img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 50%;border:1px solid var(--line);box-shadow:0 12px 32px -6px rgba(15,30,54,.14), 0 0 0 1px rgba(255,255,255,.9);transition:transform .35s ease}
 @media (min-width:760px){.hero figure img{aspect-ratio:16/11}}
+.hero figure:hover img{transform:scale(1.02)}
 .hero figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
 
 /* Studio Proof Cards (Section 3) */
-.studio-proof{display:grid;gap:20px;margin-top:32px}
+.studio-proof{display:grid;gap:20px;margin-top:28px}
 .proof-card{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 18px -4px rgba(15,30,54,.06);display:flex;flex-direction:column;transition:transform .25s cubic-bezier(0.16,1,0.3,1), box-shadow .25s cubic-bezier(0.16,1,0.3,1), border-color .25s ease}
-.proof-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.1);border-color:rgba(201,162,74,0.4)}
+.proof-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.12);border-color:rgba(201,162,74,0.4)}
 .proof-media{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--mist)}
-.proof-media img{width:100%;height:100%;object-fit:cover;display:block}
+.proof-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.proof-card:hover .proof-media img{transform:scale(1.03)}
 .proof-media.dossier img{object-position:50% 28%}
 .proof-media.mentoring img{object-position:50% 45%}
 .proof-badge{position:absolute;bottom:10px;left:10px;display:inline-flex;align-items:center;gap:6px;background:rgba(15,30,54,.88);color:#fff;font-size:.76rem;font-weight:700;letter-spacing:.02em;padding:4px 10px;border-radius:6px;backdrop-filter:blur(4px)}
@@ -125,7 +138,7 @@ p{margin:0}
 .proof-card figcaption b{color:var(--ink);display:block;margin-bottom:4px;font-size:.98rem;font-weight:720}
 
 @media (min-width:760px){
-  .studio-proof{grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}
+  .studio-proof{grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
   .proof-media{aspect-ratio:16/11}
 }
 
@@ -150,17 +163,32 @@ section.s.alt{background:var(--mist);border-top:1px solid var(--line);border-bot
 .pf h3{font-size:1.05rem}
 .pf p{color:var(--text)}
 
+/* Bento Deliverables Grid (Section 3) */
+.bento-grid{display:grid;gap:16px;margin-top:24px}
+.bento-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 18px -4px rgba(15,30,54,.06);transition:transform .25s cubic-bezier(0.16,1,0.3,1), box-shadow .25s cubic-bezier(0.16,1,0.3,1), border-color .25s ease;position:relative;overflow:hidden}
+.bento-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.12);border-color:rgba(201,162,74,0.4)}
+.bento-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--go),var(--brass))}
+.bento-tag{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:750;letter-spacing:.03em;text-transform:uppercase;color:var(--go);background:rgba(15,127,67,0.08);padding:3px 8px;border-radius:4px;width:fit-content}
+.bento-card h3{font-size:1.1rem;font-weight:760;color:var(--ink);line-height:1.25}
+.bento-card p{font-size:.92rem;color:var(--text);line-height:1.48}
+.bento-deliverable{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:.82rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px}
+.bento-deliverable b{color:var(--ink)}
+@media (min-width:760px){
+  .bento-grid{grid-template-columns:repeat(3,1fr);gap:20px}
+}
+
 /* 15-Day Cohort Roadmap (Section 4) */
 .roadmap{display:grid;gap:20px;margin-top:28px}
 .phase-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 4px 18px -4px rgba(15,30,54,.06);display:grid;gap:12px;transition:transform .25s cubic-bezier(0.16,1,0.3,1), box-shadow .25s cubic-bezier(0.16,1,0.3,1), border-color .25s ease}
-.phase-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.1);border-color:rgba(201,162,74,0.38)}
+.phase-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.12);border-color:rgba(201,162,74,0.38)}
 .phase-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
 .phase-badge{font-size:.76rem;font-weight:750;color:var(--ink);letter-spacing:0.03em;text-transform:uppercase;background:var(--mist);padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
 .phase-days{font-size:.82rem;font-weight:720;color:var(--go);display:inline-flex;align-items:center;gap:5px}
 .phase-days::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--go)}
 .phase-card h3{font-size:1.15rem;font-weight:750;color:var(--ink);line-height:1.25}
 .phase-media{position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:var(--mist);margin:2px 0 4px;border:1px solid var(--line)}
-.phase-media img{width:100%;height:100%;object-fit:cover;display:block}
+.phase-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.phase-card:hover .phase-media img{transform:scale(1.03)}
 .phase-points{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:6px}
 .phase-points li{position:relative;padding-left:16px;font-size:.92rem;color:var(--text);line-height:1.45}
 .phase-points li::before{content:"›";position:absolute;left:0;color:var(--go);font-weight:800;font-size:1.1rem;line-height:1.2}
@@ -170,13 +198,16 @@ section.s.alt{background:var(--mist);border-top:1px solid var(--line);border-bot
   .phase-card.featured{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
   .phase-card.featured .phase-media{aspect-ratio:16/10;margin:0}
 }
-/* Mentors */
-.mentors{display:grid;gap:14px;margin-top:24px}
-.mentor{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 4px 18px -4px rgba(15,30,54,.05);transition:transform .25s cubic-bezier(0.16,1,0.3,1), box-shadow .25s cubic-bezier(0.16,1,0.3,1), border-color .25s ease}
-.mentor:hover{transform:translateY(-3px);box-shadow:0 14px 28px -6px rgba(15,30,54,.1);border-color:rgba(201,162,74,0.38)}
-.mentor img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(15,30,54,.1)}
-.mentor .cred{font-size:.92rem;color:var(--ink);font-weight:600;margin-top:2px}
-.mentor p.does{font-size:.95rem;color:var(--muted);margin-top:4px}
+
+/* Mentors (Elite Officer Faculty) */
+.mentors{display:grid;gap:16px;margin-top:24px}
+.mentor{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:center;padding:20px;background:#0d1a30;color:#e2e8f0;border:1px solid rgba(201,162,74,0.28);border-radius:var(--r);box-shadow:0 6px 20px -4px rgba(15,30,54,.25);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+.mentor:hover{transform:translateY(-3px);box-shadow:0 14px 30px -6px rgba(15,30,54,.35);border-color:rgba(201,162,74,0.6)}
+.mentor img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--brass);box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.mentor h3{color:#fff;font-size:1.14rem;font-weight:750}
+.mentor .rank-badge{display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(201,162,74,0.18);color:#e5c46d;font-size:.74rem;font-weight:750;letter-spacing:.02em;margin-top:3px;text-transform:uppercase;border:1px solid rgba(201,162,74,0.35);width:fit-content}
+.mentor .cred{font-size:.88rem;color:#cbd5e1;font-weight:550;margin-top:4px;line-height:1.35}
+.mentor p.does{font-size:.84rem;color:#94a3b8;margin-top:4px;line-height:1.4}
 
 /* Stories / Student Testimonials */
 .quotes{display:grid;gap:18px;margin-top:24px}
@@ -267,6 +298,10 @@ footer p+p{margin-top:10px}
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.82.83-3-.2-.31a8.2 8.2 0 1 1 6.97 3.82Zm4.5-6.14c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.17.04-.31-.02-.43l-.76-1.83c-.2-.48-.4-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 3 .62.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></symbol>
 </svg>
 
+<div class="ticker-ribbon" role="region" aria-label="Cohort admissions status">
+  <span class="star">★</span> <span>Next Cohort: Strictly 15 Candidates</span> <span class="highlight">· Delhi Studio &amp; Online Live</span> <span class="star">★</span> <span>Admissions Open</span>
+</div>
+
 <header class="top">
   <div class="wrap">
     <a class="brand" href="https://r2rssb.com/">
@@ -299,10 +334,19 @@ footer p+p{margin-top:10px}
 
       <div class="act">
         <a class="btn block wa" data-cta="hero" href="https://wa.me/919971910683?text=Hi"><svg aria-hidden="true"><use href="#wa"/></svg>Chat with us on WhatsApp</a>
-        <p class="note">Send a message. We reply directly on WhatsApp with current batch schedules and details.</p>
+        <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Direct WhatsApp with Mentors · No call center bots · Immediate batch schedule</p>
       </div>
 
-      <p class="batchline"><strong data-fill="nextBatch">Batches start every 15 days (strictly 15 seats).</strong> Online ₹12,000 · Delhi classroom ₹18,000 (15 days).</p>
+      <div class="live-scarcity">
+        <div class="live-scarcity-left">
+          <span class="live-dot"></span>
+          <div>
+            <strong data-fill="nextBatch">Batches start every 15 days</strong>
+            <div style="font-size:.82rem;color:#94a3b8;margin-top:2px">Online ₹12,000 · Delhi Classroom ₹18,000</div>
+          </div>
+        </div>
+        <span class="badge-cap">Strictly 15 Seats</span>
+      </div>
     </div>
 
     <figure>
@@ -353,20 +397,28 @@ footer p+p{margin-top:10px}
 <section class="s reveal" aria-labelledby="why-h">
   <div class="wrap">
     <h2 id="why-h">Why good candidates keep getting screened out</h2>
-    <ul class="pf">
-      <li>
-        <h3>Memorised templates</h3>
-        <p>Board psychologists spot coached answers quickly. At R2R you build answers from your own life, so they hold up under pressure.</p>
-      </li>
-      <li>
-        <h3>Nobody reads your answers</h3>
-        <p>In a batch of 150, no one checks your TAT or PIQ. With 15 per batch, a mentor goes through every story and response with you.</p>
-      </li>
-      <li>
-        <h3>Your story doesn't match up</h3>
-        <p>When your PIQ, psych tests and interview tell different stories, the conference notices. We check that they line up.</p>
-      </li>
-    </ul>
+    <div class="bento-grid">
+      <div class="bento-card reveal">
+        <span class="bento-tag">1-on-1 Psych Audit</span>
+        <h3>No Mass Lecture Halls</h3>
+        <p>In typical 150-student coaching factories, nobody reads your TAT or PIQ. At R2R, every single story and response is audited across the table with you.</p>
+        <div class="bento-deliverable"><b>Audit:</b> 12 TAT · 60 WAT · 60 SRTs Scrutinized</div>
+      </div>
+
+      <div class="bento-card reveal">
+        <span class="bento-tag">Zero Copied Scripts</span>
+        <h3>Psychologists Spot Templates in 30s</h3>
+        <p>Canned "ideal leader" tropes fall apart under board cross-examination. We deconstruct your actual life history so your answers project authentic subconscious truth.</p>
+        <div class="bento-deliverable"><b>Outcome:</b> Your True Self, Under Pressure</div>
+      </div>
+
+      <div class="bento-card reveal">
+        <span class="bento-tag">Conference Lock</span>
+        <h3>3-Way Triangulation Alignment</h3>
+        <p>When your PIQ, psychology tests, and interview tell contradictory stories, the conference notices immediately. We align all three testing techniques before you face the board.</p>
+        <div class="bento-deliverable"><b>Alignment:</b> Psych + GTO + Interview Synced</div>
+      </div>
+    </div>
 
     <div class="studio-proof">
       <figure class="proof-card reveal">
@@ -486,16 +538,31 @@ footer p+p{margin-top:10px}
     <h2 id="mentors-h">Your mentors were recommended themselves</h2>
     <div class="mentors">
       <div class="mentor reveal">
-        <img loading="lazy" src="images/opt/shashank.webp" width="72" height="72" alt="Shashank Rai">
-        <div><h3>Shashank Rai</h3><p class="cred">Founder. AIR 19, CDS-1 2018. Recommended twice.</p><p class="does">Psychology tests, PPDT and the interview.</p></div>
+        <img loading="lazy" src="images/opt/shashank.webp" width="76" height="76" alt="Shashank Rai">
+        <div>
+          <h3>Shashank Rai</h3>
+          <span class="rank-badge">Founder · AIR 19 CDS-1 · 2x Rec</span>
+          <p class="cred">Cleared NDA, CDS, AFCAT. Subconscious narrative &amp; psychological testing specialist.</p>
+          <p class="does">Leads 1-on-1 TAT/WAT/SRT deconstruction, PPDT screening, and personal interview.</p>
+        </div>
       </div>
       <div class="mentor reveal">
-        <img loading="lazy" src="images/opt/neha.webp" width="72" height="72" alt="Neha Vashisth">
-        <div><h3>Neha Vashisth</h3><p class="cred">Recommended three times. MHA, TISS Mumbai.</p><p class="does">Psychology, screening and Self Description.</p></div>
+        <img loading="lazy" src="images/opt/neha.webp" width="76" height="76" alt="Neha Vashisth">
+        <div>
+          <h3>Neha Vashisth</h3>
+          <span class="rank-badge">Thrice Recommended · MHA, TISS</span>
+          <p class="cred">DRDO &amp; Air Force background. Master's in Health Administration (TISS Mumbai).</p>
+          <p class="does">Specializes in authentic psychological profiling and Self Description (SD) forensic audit.</p>
+        </div>
       </div>
       <div class="mentor reveal">
-        <img loading="lazy" src="images/opt/rahul.webp" width="72" height="72" alt="Rahul Sharma">
-        <div><h3>Rahul Sharma</h3><p class="cred">JAG-35, AIR 9. Advocate at the Armed Forces Tribunal.</p><p class="does">PIQ-based mock interviews and stress questions.</p></div>
+        <img loading="lazy" src="images/opt/rahul.webp" width="76" height="76" alt="Rahul Sharma">
+        <div>
+          <h3>Rahul Sharma</h3>
+          <span class="rank-badge">JAG-35 AIR 9 · High Court Advocate</span>
+          <p class="cred">Practicing advocate specializing in Armed Forces Tribunal litigation.</p>
+          <p class="does">Conducts aggressive PIQ forensic cross-examination and stress-interview simulations.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -586,36 +653,40 @@ footer p+p{margin-top:10px}
     <p class="intro">Both are 15-day batches with the same three mentors.</p>
     <div class="batches">
       <div class="batch reveal">
+        <span class="badge-attempt" style="margin-bottom:8px">Live Interactive Cohort</span>
         <h3>Online batch</h3>
-        <p class="where">Live on video, from anywhere in India</p>
-        <p class="fee">₹12,000 <small>full course</small></p>
-        <p class="feenote">Separate modules for psychology, PIQ or interview also available.</p>
+        <p class="where">Live interactive sessions on video, from anywhere in India</p>
+        <p class="fee">₹12,000 <small>full 15-day course</small></p>
+        <p class="feenote">Individual modules for psychology, PIQ, or mock interview also available.</p>
         <dl>
-          <dt>Timings</dt><dd>Morning and evening batches</dd>
+          <dt>Timings</dt><dd>Morning and evening cohort slots</dd>
           <dt>Starts</dt><dd data-fill="nextOnline">Ask us for the next date</dd>
         </dl>
         <ul>
-          <li>Live PPDT and TAT practice with screen sharing</li>
-          <li>1-on-1 mock interviews on video</li>
-          <li>Recordings of every session, yours to keep</li>
+          <li>Live PPDT &amp; TAT simulation with real-time screen sharing</li>
+          <li>1-on-1 mock interviews on video with Advocate Rahul Sharma</li>
+          <li>Complete session recordings provided, yours to keep</li>
+          <li>Strictly 15 candidates per online batch</li>
         </ul>
         <a class="btn block wa" data-cta="online" href="https://wa.me/919971910683?text=Hi"><svg aria-hidden="true"><use href="#wa"/></svg>Ask about the online batch</a>
-        <p class="alt-link">Already decided? <a href="https://r2rssb.graphy.com/s/store" target="_blank" rel="noopener">Enrol on our course store</a></p>
+        <p class="alt-link">Ready to enrol? <a href="https://r2rssb.graphy.com/s/store" target="_blank" rel="noopener">Enrol on our course portal</a></p>
       </div>
-      <div class="batch reveal">
+      <div class="batch reveal" style="border-color:rgba(201,162,74,0.45);box-shadow:0 8px 24px -4px rgba(15,30,54,.1)">
+        <span class="badge-attempt" style="margin-bottom:8px;background:rgba(15,127,67,0.12);color:var(--go);border:1px solid rgba(15,127,67,0.3)">Flagship Delhi Studio</span>
         <h3>Delhi classroom batch</h3>
-        <p class="where">Patel Nagar, near Patel Nagar Metro (Blue Line)</p>
+        <p class="where">Patel Nagar Studio (2 min from Patel Nagar Metro, Blue Line)</p>
         <p class="fee">₹18,000 <small>tuition</small></p>
-        <p class="feenote">Reserve a seat for ₹2,000, adjusted against the fee.</p>
+        <p class="feenote">Reserve your seat with ₹2,000 (adjusted against the fee).</p>
         <dl>
-          <dt>Timings</dt><dd>9:00 AM – 5:00 PM daily</dd>
+          <dt>Timings</dt><dd>9:00 AM – 5:00 PM daily (Intensive)</dd>
           <dt>Starts</dt><dd data-fill="nextOffline">Ask us for the next date</dd>
-          <dt>Stay</dt><dd>Budget PGs within walking distance</dd>
+          <dt>Stay</dt><dd>Budget student PGs within 3-minute walking distance</dd>
         </dl>
         <ul>
-          <li>Group discussions and GTO practice in person</li>
-          <li>Face-to-face mock interviews with Rahul Sharma</li>
-          <li>15 candidates per batch, maximum</li>
+          <li>Real ground dynamics: PGT, HGT, and Command Tasks in person</li>
+          <li>Face-to-face boardroom PIQ mock interviews with Rahul Sharma</li>
+          <li>Line-by-line psychological dossier audit across the desk</li>
+          <li>Strictly capped at 15 candidates — no exceptions</li>
         </ul>
         <a class="btn block wa" data-cta="delhi" href="https://wa.me/919971910683?text=Hi"><svg aria-hidden="true"><use href="#wa"/></svg>Ask about the Delhi batch</a>
       </div>
